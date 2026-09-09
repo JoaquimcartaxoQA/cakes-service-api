@@ -35,7 +35,7 @@ public class SecurityConfig {
             AuthenticationManagerBuilder auth,
             PasswordEncoder passwordEncoder,
             @Value("${cakes.authentication.username}") String userName,
-            @Value("${cakes.authentication.password}") String password
+            @Value("cake123") String password
     ) throws Exception {
         auth
                 .inMemoryAuthentication()
