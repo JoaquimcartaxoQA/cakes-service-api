@@ -346,6 +346,6 @@ class CakeControllerTest {
     }
 
     private void withBasicAuth(HttpHeaders headers) {
-        headers.setBasicAuth("cake-user", "cake123");
+        headers.setBasicAuth("cake-user-test", "cake-password-test");
     }
 }
