@@ -34,10 +34,20 @@ public class CakeDatabasePopulator {
         });
 
         List<Cake> cakes = cakesToPopulate.stream()
-                .map(cake -> Cake.builder()
-                        .title(cake.title)
-                        .description(cake.desc)
-                        .build())
+                .map(cake -> {
+                    String title = cake.title;
+                    String description = cake.desc;
+
+                    if ("Lemon cheesecake".equals(title)) {
+                        title = "Orange cake";
+                        description = "A cheesecake made of orange";
+                    }
+
+                    return Cake.builder()
+                            .title(title)
+                            .description(description)
+                            .build();
+                })
                 .toList();
 
         cakeRepository.saveAll(cakes);
